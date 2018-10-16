@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mamut-ng6-lib": [
+        "dist/mamut-ng6-lib"
+      ],
+      "mamut-ng6-lib/*": [
+        "dist/mamut-ng6-lib/*"
+      ]
+    }
   }
 }

@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "mamut-ng6-lib": {
+      "root": "projects/mamut-ng6-lib",
+      "sourceRoot": "projects/mamut-ng6-lib/src",
+      "projectType": "library",
+      "prefix": "mmt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mamut-ng6-lib/tsconfig.lib.json",
+            "project": "projects/mamut-ng6-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mamut-ng6-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mamut-ng6-lib/src/test.ts",
+            "tsConfig": "projects/mamut-ng6-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/mamut-ng6-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mamut-ng6-lib/tsconfig.lib.json",
+              "projects/mamut-ng6-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "mamut-ng6"
